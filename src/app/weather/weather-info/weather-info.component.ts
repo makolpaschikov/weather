@@ -2,13 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-weather-info',
-  template: `
-    <p>
-      weather-info works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './weather-info.component.html',
+  styleUrls: ['./weather-info.component.scss']
 })
 export class WeatherInfoComponent implements OnInit {
 

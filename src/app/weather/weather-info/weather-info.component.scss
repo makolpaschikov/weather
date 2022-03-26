@@ -1,1 +1,22 @@
+:host {
+   width: calc(100% * 0.70);   
+   
+   .weater-info-container {
+      height: 100vh;
+      padding: 70px 65px 80px;
+      display: flex;
+      flex-direction: column;
 
+      .header {
+         display: flex;
+         padding: 10px 0;
+         justify-content: space-between;
+         align-items: center;
+
+         img {
+            width: auto;
+            height: 100px;
+         }
+      }
+   }
+}

@@ -1,0 +1,9 @@
+:host {
+   width: calc(100% * 0.30);   
+
+   .weather-details-container {
+      height: 100vh;
+      background: #D6D6D6;
+      opacity: 10%;
+   }
+}
