@@ -1,0 +1,105 @@
+:host {
+   .switch-container {
+      font-size: 1.75rem;
+
+      .switch {
+         position: relative;
+         display: inline-block;
+         width: 120px;
+         height: 50px;
+
+         @media only screen and (min-width: 2000px) {
+            width: 240px;
+            height: 100px;
+         }
+         @media only screen and (min-width: 768px) and (max-width: 1399px) {
+            width: calc(120px / 3 * 2);
+            height: calc(50px / 3 * 2);
+         }
+         @media only screen and (max-width: 425px) {
+            width: calc(120px / 3 * 2);
+            height: calc(50px / 3 * 2);
+         }
+
+         input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+         }
+      }
+
+      .slider {
+         position: absolute;
+         cursor: pointer;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: rgba(255, 255, 255, 0.16);
+         -webkit-transition: 0.4s;
+         transition: 0.4s;
+
+         &:before {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            content: "C";
+
+            width: 65px;
+            height: 100%;
+
+            background-color: rgba(196, 196, 196, 0.25);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25), 0px 0px 10px rgba(0, 0, 0, 0.25);
+            -webkit-transition: 0.4s;
+            transition: 0.4s;
+
+            @media only screen and (min-width: 2000px) {
+               width: 130px;
+            }
+            @media only screen and (min-width: 768px) and (max-width: 1399px) {
+               width: calc(65px / 3 * 2);
+            }
+            @media only screen and (max-width: 425px) {
+               width: calc(65px / 3 * 2);
+            }
+         }
+      }
+
+      input:checked + .slider:before {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         content: "F";
+         -webkit-transform: translateX(55px);
+         -ms-transform: translateX(55px);
+         transform: translateX(55px);
+         filter: drop-shadow(4px 4px 4px rgba(255, 255, 255, 0));
+
+         @media only screen and (min-width: 2000px) {
+            -webkit-transform: translateX(110px);
+            -ms-transform: translateX(110px);
+            transform: translateX(110px);
+         }
+         @media only screen and (min-width: 768px) and (max-width: 1399px) {
+            -webkit-transform: translateX(calc(55px / 3 * 2));
+            -ms-transform: translateX(calc(55px / 3 * 2));
+            transform: translateX(calc(55px / 3 * 2));
+         }
+         @media only screen and (max-width: 425px) {
+            -webkit-transform: translateX(calc(55px / 3 * 2));
+            -ms-transform: translateX(calc(55px / 3 * 2));
+            transform: translateX(calc(55px / 3 * 2));
+         }
+      }
+
+      /* Rounded sliders */
+      .slider.round {
+         border-radius: 40px;
+
+         &:before {
+            border-radius: 40px;
+         }
+      }
+   }
+}

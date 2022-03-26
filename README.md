@@ -1,27 +1,14 @@
 # Weather
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+This website determines your location and predicts the weather for the next 5 days.
+<br>
+https://makolpaschikov.github.io/ 
 
-## Development server
+<b>Attention! Information about the user's location is obtained without his agreement.
+<br>
+The data is used exclusively for obtaining weather data!</b>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Getting the user's location: https://ipinfo.io <br>
+Getting weather data: https://openweathermap.org <br>
+Design: https://www.figma.com/community/file/1085133038163154479 <br>
+Icons: https://www.figma.com/community/file/1084806739453852009

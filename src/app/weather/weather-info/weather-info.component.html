@@ -1,0 +1,62 @@
+<div class="weater-info-container">
+  <div class="header">
+    <img
+      [src]="'assets/icons/weather/' + weatherData?.currentWeather?.icon"
+      [alt]="weatherData?.currentWeather?.weaterType"
+    />
+
+    <app-switch></app-switch>
+  </div>
+  <div class="actual-data">
+    <div class="actual-data__temperature">
+      {{
+        weatherData?.currentWeather?.temperature
+          | temperature: isCelsiumTemperature
+      }}
+      <sup>
+        <sup class="degree">0</sup>
+        <span *ngIf="isCelsiumTemperature">C</span>
+        <span *ngIf="!isCelsiumTemperature">F</span>
+      </sup>
+    </div>
+    <div class="actual-data__date">{{ weatherData?.location?.date }}</div>
+    <div class="actual-data__date">
+      {{ weatherData?.location?.day }}
+      <span>{{ time | async | time }}</span>
+    </div>
+    <div class="actual-data__weather">
+      <div class="actual-data__weather_item">
+        <img src="assets/icons/actual-info/wind.svg" alt="Wind" class="wind"/>Wind
+        <span>{{ weatherData?.currentWeather?.wind }} mi/h</span><span class="weather-sep">|</span>
+      </div>
+      <div class="actual-data__weather_item">
+        <img src="assets/icons/actual-info/hum.svg" alt="Hum" />Hum
+        <span>{{ weatherData?.currentWeather?.hum }} %</span><span class="weather-sep">|</span>
+      </div>
+      <div class="actual-data__weather_item">
+        <img src="assets/icons/actual-info/rain.svg" alt="Rain" />Precipitation
+        <span>{{ weatherData?.currentWeather?.precipitation }} mm</span>
+      </div>
+
+    </div>
+  </div>
+  <div class="next-days-data">
+    <div class="days">
+      <div class="days__day" *ngFor="let weather of weatherData?.nextDays">
+        <div class="days__day_data">
+          <div>
+            {{ weather.temp | temperature: isCelsiumTemperature }}<sup>o</sup>
+            <span *ngIf="isCelsiumTemperature">C</span>
+            <span *ngIf="!isCelsiumTemperature">F</span>
+          </div>
+          <img
+            [src]="'assets/icons/weather/' + weather.icon"
+            [alt]="weather.weatherType"
+          />
+        </div>
+        <div class="days__day_day">{{ weather.day }}</div>
+      </div>
+    </div>
+
+  </div>
+</div>
