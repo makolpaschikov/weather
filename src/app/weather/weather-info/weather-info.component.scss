@@ -1,0 +1,134 @@
+:host {
+   width: calc(100% * 0.7);
+
+   .weater-info-container {
+      height: 100vh;
+      padding: 70px 65px 80px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      .header {
+         display: flex;
+         padding: 10px 0;
+         justify-content: space-between;
+         align-items: center;
+
+         img {
+            width: auto;
+            height: 100px;
+         }
+      }
+
+      .actual-data {
+         display: flex;
+         flex-direction: column;
+
+         &__temperature {
+            font-size: 164px;
+            letter-spacing: 0.025em;
+            margin-bottom: 60px;
+            font-weight: 100;
+            line-height: 1;
+
+            sup {
+               font-size: 70%;
+               font-weight: 300;
+
+               &.celsius {
+                  font-size: 40%;
+               }
+            }
+         }
+
+         &__date {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            font-size: 36px;
+
+            &:first-child {
+               font-size: 40px;
+            }
+
+            span {
+               margin-left: 20px;
+               font-size: 50px;
+            }
+         }
+
+         &__weather {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            line-height: 1;
+
+            span {
+               margin-left: 20px;
+            }
+
+            img {
+               margin-right: 15px;
+
+               &:not(:first-child) {
+                  margin-left: 20px;
+               }
+            }
+         }
+      }
+
+      .next-days-data {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         height: 210px;
+         margin-top: 70px;
+
+         .days {
+            width: auto;
+            height: 100%;
+            display: flex;
+            
+            &__day {
+               width: 130px;
+               height: 100%;
+               display: flex;
+               flex-direction: column;
+               justify-content: space-between;
+               align-items: center;
+               font-size: 24px;
+               font-weight: 300;
+               border-radius: 20px;
+               padding: 15px 10px 25px 10px;
+               background-color: rgb(214, 214,214,0.4);
+               box-shadow: 3px -2px 14px -1px rgba(255, 255, 255, 0.6);
+
+               &:not(:first-child) {
+                  margin-left: 40px;
+               }
+
+               &_data {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+
+                  sup {
+                     font-size: 60%;
+                  }
+
+                  img {
+                     margin-top: 10px;
+                     width: auto;
+                     height: 37px;
+                  }
+               }
+            }
+         }
+
+         img {
+            cursor: pointer;
+         }
+
+      }
+   }
+}
