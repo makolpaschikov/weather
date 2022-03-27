@@ -1,7 +1,7 @@
 <div class="weather-details-container">
   <div class="header">
     <img src="assets/icons/details/place.svg" alt="Place" />
-    Vologda, Russia
+    {{ weatherData?.location?.city }}, {{ weatherData?.location?.country }}
   </div>
   <div class="suntime">
     <div class="suntime__item">

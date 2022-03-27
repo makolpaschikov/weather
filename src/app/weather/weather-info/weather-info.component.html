@@ -7,8 +7,8 @@
     <div class="actual-data__temperature">
       26<sup><sup class="celsius">0</sup>c</sup>
     </div>
-    <div class="actual-data__date">14th Mar 22</div>
-    <div class="actual-data__date">Monday <span>10:40 AM</span></div>
+    <div class="actual-data__date">{{ weatherData?.location?.date }}</div>
+    <div class="actual-data__date">{{ weatherData?.location?.day }} <span>{{ weatherData?.location?.time }}</span></div>
     <div class="actual-data__weather">
       <img src="assets/icons/actual-info/wind.svg" alt="Wind" />Wind
       <span>10 km/h</span><span>|</span>
@@ -48,9 +48,7 @@
         </div>
         <div class="days__day_day">Fri</div>
       </div>
-
     </div>
     <img src="assets/icons/next-days/next.svg" alt="Next" />
-
   </div>
 </div>
