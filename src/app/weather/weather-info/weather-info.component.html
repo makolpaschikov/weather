@@ -6,7 +6,8 @@
   <div class="actual-data">
     <div class="actual-data__temperature">
       {{
-        weatherData?.currentWeather?.temperature | temperature: isCelsiumTemperature
+        weatherData?.currentWeather?.temperature
+          | temperature: isCelsiumTemperature
       }}
       <sup>
         <sup class="degree">0</sup>
@@ -21,11 +22,12 @@
     </div>
     <div class="actual-data__weather">
       <img src="assets/icons/actual-info/wind.svg" alt="Wind" />Wind
-      <span>10 km/h</span><span>|</span>
+      <span>{{ weatherData?.currentWeather?.wind }} mi/h</span
+      ><span>|</span>
       <img src="assets/icons/actual-info/hum.svg" alt="Hum" />Hum
-      <span>54 %</span><span>|</span>
-      <img src="assets/icons/actual-info/rain.svg" alt="Rain" />Rain
-      <span>0.2 %</span>
+      <span>{{ weatherData?.currentWeather?.hum }} %</span><span>|</span>
+      <img src="assets/icons/actual-info/rain.svg" alt="Rain" />Precipitation
+      <span>{{ weatherData?.currentWeather?.precipitation }} mm</span>
     </div>
   </div>
   <div class="next-days-data">

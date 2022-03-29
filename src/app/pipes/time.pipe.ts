@@ -8,7 +8,7 @@ export class TimePipe implements PipeTransform {
       if (!time) {
          return '';
       } else {
-         const date = new Date(time);
+         const date = isUTC ? new Date(time * 1000) : new Date(time);
          let hours = date.getHours();
          let minutes = date.getMinutes();
 

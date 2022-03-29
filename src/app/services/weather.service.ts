@@ -46,7 +46,12 @@ export class WeatherService {
                return this.getCurrentWeater(weather.location);
             }),
             switchMap(currentWeather => {
-               console.log(currentWeather);
+               let precipitation = 0;
+               if (currentWeather.rain) {
+                  precipitation = parseFloat(Object.values(currentWeather.rain)[0] as string);
+               } else if (currentWeather.snow) {
+                  precipitation = parseFloat(Object.values(currentWeather.snow)[0] as string);
+               }
 
                weather.currentWeather = {
                   icon: currentWeather.weather[0].icon,
@@ -54,7 +59,8 @@ export class WeatherService {
                   temperature: currentWeather.main.temp,
                   wind: currentWeather.wind.speed,
                   hum: currentWeather.main.humidity,
-                  rain: 5,
+                  precipitation: precipitation,
+                  visibility: currentWeather.visibility / 1000,
                   sunrise: currentWeather.sys.sunrise,
                   sunset: currentWeather.sys.sunset,
                }
@@ -62,7 +68,6 @@ export class WeatherService {
                return of(true)
             })
          ).subscribe(currentWeather => {
-            console.log(currentWeather);
             this._weather$.next(weather);
          })
    }
@@ -73,6 +78,8 @@ export class WeatherService {
 
    private getCurrentWeater(location: LocationData): Observable<CurrentWeather> {
       let url = EnvironmentConst.CURRENT_WEATHER_URL.replace('{location}', `${location.city},${location.country}`)
+      console.log(url);
+
       return this._http.get<CurrentWeather>(url);
    }
 

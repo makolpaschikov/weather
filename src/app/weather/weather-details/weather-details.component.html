@@ -7,14 +7,14 @@
     <div class="suntime__item">
       <div class="suntime__item_title">Sunrise</div>
       <div class="suntime__item_block">
-        <div>{{ weatherData?.currentWeather?.sunrise | time }}</div>
+        <div>{{ weatherData?.currentWeather?.sunrise | time: true }}</div>
         <img src="assets/icons/details/sunrise.svg" alt="Sunrise" />
       </div>
     </div>
     <div class="suntime__item">
       <div class="suntime__item_title">Sunset</div>
       <div class="suntime__item_block">
-        <div>{{ weatherData?.currentWeather?.sunset | time }}</div>
+        <div>{{ weatherData?.currentWeather?.sunset | time: true }}</div>
         <img src="assets/icons/details/sunset.svg" alt="Sunset" />
       </div>
     </div>
@@ -23,19 +23,19 @@
   <div class="data">
     <div class="data__item">
       <div>Humidity</div>
-      <div>38%</div>
+      <div>{{ weatherData?.currentWeather?.hum }}%</div>
     </div>
     <div class="data__item">
-      <div>Chanse of rain</div>
-      <div>2%</div>
+      <div>Precipitation</div>
+      <div>{{ weatherData?.currentWeather?.precipitation }} mm</div>
     </div>
     <div class="data__item">
-      <div>Air Quality</div>
-      <div>3/10</div>
+      <div>Visibility</div>
+      <div>{{ weatherData?.currentWeather?.visibility }} km</div>
     </div>
     <div class="data__item">
       <div>Wind speed</div>
-      <div>3.8 km/h</div>
+      <div>{{ weatherData?.currentWeather?.wind }} mi/h</div>
     </div>
   </div>
 </div>

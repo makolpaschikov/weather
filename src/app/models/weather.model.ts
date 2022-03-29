@@ -11,7 +11,8 @@ export class WeatherModel {
       temperature: number;
       wind: number;
       hum: number;
-      rain: number;
+      precipitation: number;
+      visibility: number;
       sunrise: number;
       sunset: number;
    } | undefined;

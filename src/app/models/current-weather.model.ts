@@ -16,6 +16,9 @@ export interface CurrentWeather {
    },
    sys: {
       sunrise: number,
-      sunset: number
-   }
+      sunset: number,
+   },
+   visibility: number,
+   rain: {},
+   snow: {}
 }
