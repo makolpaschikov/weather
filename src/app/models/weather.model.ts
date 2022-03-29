@@ -18,9 +18,10 @@ export class WeatherModel {
    } | undefined;
    nextDays: [
       {
-         temperature: string;
-         weaterType: string
-         day: string;
+         temp: number,
+         weatherType: string,
+         icon: string,
+         day: string,
       }
    ] | undefined;
 }

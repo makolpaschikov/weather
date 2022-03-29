@@ -1,6 +1,9 @@
 <div class="weater-info-container">
   <div class="header">
-    <img src="assets/icons/weather/01n.svg" [src]="'assets/icons/weather/' +  weatherData?.currentWeather?.icon" alt="rain" />
+    <img
+      [src]="'assets/icons/weather/' + weatherData?.currentWeather?.icon"
+      [alt]="weatherData?.currentWeather?.weaterType"
+    />
     <app-switch></app-switch>
   </div>
   <div class="actual-data">
@@ -22,8 +25,7 @@
     </div>
     <div class="actual-data__weather">
       <img src="assets/icons/actual-info/wind.svg" alt="Wind" />Wind
-      <span>{{ weatherData?.currentWeather?.wind }} mi/h</span
-      ><span>|</span>
+      <span>{{ weatherData?.currentWeather?.wind }} mi/h</span><span>|</span>
       <img src="assets/icons/actual-info/hum.svg" alt="Hum" />Hum
       <span>{{ weatherData?.currentWeather?.hum }} %</span><span>|</span>
       <img src="assets/icons/actual-info/rain.svg" alt="Rain" />Precipitation
@@ -32,35 +34,20 @@
   </div>
   <div class="next-days-data">
     <div class="days">
-      <div class="days__day">
+      <div class="days__day" *ngFor="let weather of weatherData?.nextDays">
         <div class="days__day_data">
-          <div>25<sup>o</sup>C</div>
-          <img src="assets/icons/weather/01n.svg" alt="Weater" />
+          <div>
+            {{ weather.temp | temperature: isCelsiumTemperature }}<sup>o</sup>
+            <span *ngIf="isCelsiumTemperature">C</span>
+            <span *ngIf="!isCelsiumTemperature">F</span>
+          </div>
+          <img
+            [src]="'assets/icons/weather/' + weather.icon"
+            [alt]="weather.weatherType"
+          />
         </div>
-        <div class="days__day_day">Tue</div>
-      </div>
-      <div class="days__day">
-        <div class="days__day_data">
-          <div>26<sup>o</sup>C</div>
-          <img src="assets/icons/weather/01n.svg" alt="Weater" />
-        </div>
-        <div class="days__day_day">Wed</div>
-      </div>
-      <div class="days__day">
-        <div class="days__day_data">
-          <div>20<sup>o</sup>C</div>
-          <img src="assets/icons/weather/01n.svg" alt="Weater" />
-        </div>
-        <div class="days__day_day">Thu</div>
-      </div>
-      <div class="days__day">
-        <div class="days__day_data">
-          <div>24<sup>o</sup>C</div>
-          <img src="assets/icons/weather/01n.svg" alt="Weater" />
-        </div>
-        <div class="days__day_day">Fri</div>
+        <div class="days__day_day">{{ weather.day }}</div>
       </div>
     </div>
-    <img src="assets/icons/next-days/next.svg" alt="Next" />
   </div>
 </div>
