@@ -11,13 +11,19 @@ import { WeatherService } from '../services/weather.service';
 export class WeatherComponent implements OnInit, OnDestroy {
 
   private _destroy: Subject<void> = new Subject();
+  dataIsLoaded = false;
   weatherData: WeatherModel | undefined;
+
 
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
     this.weatherService.weatherData$.pipe(takeUntil(this._destroy)).subscribe(weatherData => {
       this.weatherData = weatherData;
+
+      if (weatherData.nextDays) {
+        this.dataIsLoaded = true;
+      }
     });
   }
 

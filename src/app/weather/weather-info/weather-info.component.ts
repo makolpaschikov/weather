@@ -14,7 +14,7 @@ export class WeatherInfoComponent implements OnInit, OnDestroy {
   private _destroy: Subject<void> = new Subject();
 
   time = new Observable<number>((observer: Subscriber<number>) => {
-    setInterval(() => observer.next(new Date().getTime()), 1000);
+    setInterval(() => observer.next(new Date().getTime()), 100);
   });
 
   @Input()
