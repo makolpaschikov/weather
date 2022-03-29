@@ -46,7 +46,6 @@ export class WeatherService {
                return this.getCurrentWeater(weather.location);
             }),
             switchMap(currentWeather => {
-               //weather.currentWeather
                console.log(currentWeather);
 
                weather.currentWeather = {
