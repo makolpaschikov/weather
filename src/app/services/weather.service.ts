@@ -54,7 +54,7 @@ export class WeatherService {
                }
 
                weather.currentWeather = {
-                  icon: currentWeather.weather[0].icon,
+                  icon: `${currentWeather.weather[0].icon}.svg`,
                   weaterType: currentWeather.weather[0].main,
                   temperature: currentWeather.main.temp,
                   wind: currentWeather.wind.speed,

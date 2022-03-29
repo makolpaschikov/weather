@@ -1,6 +1,6 @@
 <div class="weater-info-container">
   <div class="header">
-    <img src="assets/icons/weather/cloud-rain.svg" alt="rain" />
+    <img src="assets/icons/weather/01n.svg" [src]="'assets/icons/weather/' +  weatherData?.currentWeather?.icon" alt="rain" />
     <app-switch></app-switch>
   </div>
   <div class="actual-data">
@@ -35,28 +35,28 @@
       <div class="days__day">
         <div class="days__day_data">
           <div>25<sup>o</sup>C</div>
-          <img src="assets/icons/weather/cloud.svg" alt="Weater" />
+          <img src="assets/icons/weather/01n.svg" alt="Weater" />
         </div>
         <div class="days__day_day">Tue</div>
       </div>
       <div class="days__day">
         <div class="days__day_data">
           <div>26<sup>o</sup>C</div>
-          <img src="assets/icons/weather/cloud.svg" alt="Weater" />
+          <img src="assets/icons/weather/01n.svg" alt="Weater" />
         </div>
         <div class="days__day_day">Wed</div>
       </div>
       <div class="days__day">
         <div class="days__day_data">
           <div>20<sup>o</sup>C</div>
-          <img src="assets/icons/weather/cloud.svg" alt="Weater" />
+          <img src="assets/icons/weather/01n.svg" alt="Weater" />
         </div>
         <div class="days__day_day">Thu</div>
       </div>
       <div class="days__day">
         <div class="days__day_data">
           <div>24<sup>o</sup>C</div>
-          <img src="assets/icons/weather/cloud.svg" alt="Weater" />
+          <img src="assets/icons/weather/01n.svg" alt="Weater" />
         </div>
         <div class="days__day_day">Fri</div>
       </div>
