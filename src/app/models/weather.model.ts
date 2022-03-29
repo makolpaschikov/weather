@@ -4,14 +4,16 @@ export class WeatherModel {
       city: string;
       date: string;
       day: string;
-      time: string
    } | undefined;
    currentWeather: {
+      icon: string
       weaterType: string;
-      temperature: string;
-      wind: string;
-      hum: string;
-      rain: string
+      temperature: number;
+      wind: number;
+      hum: number;
+      rain: number;
+      sunrise: number;
+      sunset: number;
    } | undefined;
    nextDays: [
       {

@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherDetailsComponent } from './weather-details.component';
+import { ApplicationPipesModule } from 'src/app/shared/pipes.module';
 
 
 
 @NgModule({
   declarations: [
-    WeatherDetailsComponent
+    WeatherDetailsComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ApplicationPipesModule,
   ],
   exports: [
     WeatherDetailsComponent

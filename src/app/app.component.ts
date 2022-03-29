@@ -7,10 +7,10 @@ import { WeatherService } from './services/weather.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private weatherService: WeatherService) {
+  constructor(private _weatherService: WeatherService) {
   }
 
   ngOnInit(): void {
-    this.weatherService.initData()
+    this._weatherService.loadData()
   }
 }

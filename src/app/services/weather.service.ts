@@ -1,55 +1,80 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, delay, Observable, of, switchMap } from "rxjs";
 import { EnvironmentConst } from "../config/enviroment.const";
+import { CurrentWeather } from "../models/current-weather.model";
+import { LocationData } from "../models/location-data.model";
 import { WeatherModel } from "../models/weather.model";
 
-interface LocationData {
-   city: string;
-   country: string;
-}
+
+
+
+
+
 
 @Injectable({
    providedIn: 'root',
 })
 export class WeatherService {
 
-   private weather$ = new BehaviorSubject<WeatherModel>(new WeatherModel());
-   weatherData$ = this.weather$.asObservable();
+   private _isCelsiumTemperature$ = new BehaviorSubject<boolean>(true);
+   private _weather$ = new BehaviorSubject<WeatherModel>(new WeatherModel());
 
-   constructor(private http: HttpClient) { }
+   isCelsiumTemperature$ = this._isCelsiumTemperature$.asObservable();
+   weatherData$ = this._weather$.asObservable();
 
-   initData(): void {
+   constructor(private _http: HttpClient) { }
+
+   toggleTemperatureType() {
+      const currentValue = this._isCelsiumTemperature$.getValue();
+      this._isCelsiumTemperature$.next(!currentValue);
+   }
+
+   loadData(): void {
       const weather: WeatherModel = new WeatherModel();
 
-      this.getUserLocation().subscribe(location => {
-         const date = new Date();
-      
-         weather.location = {
-            ...location,
-            date: `${date.getDate()} ${EnvironmentConst.MONTH_NAMES_SHORT[date.getMonth()]} ${date.getFullYear()}`,
-            day: `${EnvironmentConst.DAY_NAMES_SHORT[date.getDay()]}`,
-            time: this.convertTime(date.getHours(), date.getMinutes())
-         }
+      this.getUserLocation()
+         .pipe(
+            switchMap(location => {
+               const date = new Date();
+               weather.location = {
+                  ...location,
+                  date: `${date.getDate()} ${EnvironmentConst.MONTH_NAMES_SHORT[date.getMonth()]} ${date.getFullYear()}`,
+                  day: `${EnvironmentConst.DAY_NAMES_SHORT[date.getDay()]}`,
+               }
 
-         this.weather$.next(weather);
-      })
+               return this.getCurrentWeater(weather.location);
+            }),
+            switchMap(currentWeather => {
+               //weather.currentWeather
+               console.log(currentWeather);
+
+               weather.currentWeather = {
+                  icon: currentWeather.weather[0].icon,
+                  weaterType: currentWeather.weather[0].main,
+                  temperature: currentWeather.main.temp,
+                  wind: currentWeather.wind.speed,
+                  hum: currentWeather.main.humidity,
+                  rain: 5,
+                  sunrise: currentWeather.sys.sunrise,
+                  sunset: currentWeather.sys.sunset,
+               }
+
+               return of(true)
+            })
+         ).subscribe(currentWeather => {
+            console.log(currentWeather);
+            this._weather$.next(weather);
+         })
    }
 
    private getUserLocation(): Observable<LocationData> {
-      return this.http.get<LocationData>(EnvironmentConst.LOCATION_URL);
+      return this._http.get<LocationData>(EnvironmentConst.LOCATION_URL);
    }
 
-   private convertTime(hours: number, minutes: number): string {
-      const ampm = hours >= 12 ? 'pm' : 'am';
-      hours = hours % 12;
-      const strHours = hours ? hours.toString() : '12';
-      const strMinutes = minutes < 10 ? '0' + minutes : minutes;
-
-      return `${strHours}:${strMinutes} ${ampm}`;
+   private getCurrentWeater(location: LocationData): Observable<CurrentWeather> {
+      let url = EnvironmentConst.CURRENT_WEATHER_URL.replace('{location}', `${location.city},${location.country}`)
+      return this._http.get<CurrentWeather>(url);
    }
-
-
-
 
 }

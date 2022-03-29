@@ -1,18 +1,19 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WeatherInfoComponent } from './weather-info.component';
+import { NgModule } from '@angular/core';
+import { ApplicationPipesModule } from 'src/app/shared/pipes.module';
 import { SwitchComponent } from './switch/switch.component';
-
+import { WeatherInfoComponent } from './weather-info.component';
 
 
 @NgModule({
   declarations: [
     WeatherInfoComponent,
-    SwitchComponent
+    SwitchComponent,
   ],
   exports: [WeatherInfoComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ApplicationPipesModule,
   ]
 })
 export class WeatherInfoModule { }

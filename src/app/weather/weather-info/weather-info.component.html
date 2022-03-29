@@ -5,10 +5,20 @@
   </div>
   <div class="actual-data">
     <div class="actual-data__temperature">
-      26<sup><sup class="celsius">0</sup>c</sup>
+      {{
+        weatherData?.currentWeather?.temperature | temperature: isCelsiumTemperature
+      }}
+      <sup>
+        <sup class="degree">0</sup>
+        <span *ngIf="isCelsiumTemperature">C</span>
+        <span *ngIf="!isCelsiumTemperature">F</span>
+      </sup>
     </div>
     <div class="actual-data__date">{{ weatherData?.location?.date }}</div>
-    <div class="actual-data__date">{{ weatherData?.location?.day }} <span>{{ weatherData?.location?.time }}</span></div>
+    <div class="actual-data__date">
+      {{ weatherData?.location?.day }}
+      <span>{{ time | async | time }}</span>
+    </div>
     <div class="actual-data__weather">
       <img src="assets/icons/actual-info/wind.svg" alt="Wind" />Wind
       <span>10 km/h</span><span>|</span>

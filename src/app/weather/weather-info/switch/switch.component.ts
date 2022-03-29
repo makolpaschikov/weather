@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from 'src/app/services/weather.service';
 
 @Component({
   selector: 'app-switch',
   templateUrl: './switch.component.html',
   styleUrls: ['./switch.component.scss']
 })
-export class SwitchComponent implements OnInit {
+export class SwitchComponent {
 
-  constructor() { }
+  constructor(private weatherService: WeatherService) { }
 
-  ngOnInit(): void {
+  toggle(): void {   
+    this.weatherService.toggleTemperatureType();
   }
-
 }

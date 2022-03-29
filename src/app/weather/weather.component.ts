@@ -16,7 +16,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
   constructor(private weatherService: WeatherService) { }
 
   ngOnInit(): void {
-    this.weatherService.weatherData$.pipe(takeUntil(this._destroy)).subscribe(weatherData => {      
+    this.weatherService.weatherData$.pipe(takeUntil(this._destroy)).subscribe(weatherData => {
       this.weatherData = weatherData;
     });
   }
