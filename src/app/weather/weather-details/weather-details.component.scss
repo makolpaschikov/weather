@@ -9,7 +9,7 @@
       justify-content: space-between;
       flex-direction: column;
 
-      @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+      @media only screen and (min-width: 768px) and (max-width: 1399px) {
          padding: 25px;
       }
 
@@ -19,7 +19,7 @@
          font-size: 2rem;
          margin-bottom: 100px;
 
-         @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+         @media only screen and (min-width: 768px) and (max-width: 1399px) {
             margin-bottom: 20px;
          }
 
@@ -43,8 +43,8 @@
             @media only screen and (min-width: 2000px) {
                width: 220px;
             }
-            @media only screen and (min-width: 1024px) and (max-width: 1399px) {
-               width: 120px;
+            @media only screen and (min-width: 768px) and (max-width: 1399px) {
+               width: 100px;
             }
 
             &_title {
@@ -68,15 +68,16 @@
                @media only screen and (min-width: 2000px) {
                   height: 300px;
                }   
-               @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+               @media only screen and (min-width: 768px) and (max-width: 1399px) {
                   height: 160px;
+                  border-radius: 35px;
                }
 
                img {
                   width: 90px;
                   height: auto;
 
-                  @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+                  @media only screen and (min-width: 768px) and (max-width: 1399px) {
                      width: 60px;
                   }
                }
@@ -90,7 +91,7 @@
          background-color: #4f4f4f;
          margin: 60px 0;
 
-         @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+         @media only screen and (min-width: 768px) and (max-width: 1399px) {
             margin: 20px 0;
          }
       }
