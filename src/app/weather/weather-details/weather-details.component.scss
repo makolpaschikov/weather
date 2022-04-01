@@ -4,10 +4,14 @@
    .weather-details-container {
       height: 100vh;
       background: rgb(214, 214, 214, 0.1);
-      padding: 50px 50px;
+      padding: 50px;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
+
+      @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+         padding: 25px;
+      }
 
       .header {
          display: flex;
@@ -15,8 +19,17 @@
          font-size: 2rem;
          margin-bottom: 100px;
 
+         @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+            margin-bottom: 20px;
+         }
+
          img {
             margin-right: 15px;
+
+            @media only screen and (min-width: 2000px) {
+               width: auto;
+               height: 60px;
+            }
          }
       }
 
@@ -26,6 +39,13 @@
 
          &__item {
             width: 140px;
+
+            @media only screen and (min-width: 2000px) {
+               width: 220px;
+            }
+            @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+               width: 120px;
+            }
 
             &_title {
                text-align: center;
@@ -45,9 +65,20 @@
                border: 1px solid #4f4f4f;
                font-size: 1.75rem;
 
+               @media only screen and (min-width: 2000px) {
+                  height: 300px;
+               }   
+               @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+                  height: 160px;
+               }
+
                img {
                   width: 90px;
                   height: auto;
+
+                  @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+                     width: 60px;
+                  }
                }
             }
          }
@@ -58,6 +89,10 @@
          height: 2px;
          background-color: #4f4f4f;
          margin: 60px 0;
+
+         @media only screen and (min-width: 1024px) and (max-width: 1399px) {
+            margin: 20px 0;
+         }
       }
 
       .data {
