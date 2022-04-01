@@ -4,7 +4,7 @@
    .weather-details-container {
       height: 100vh;
       background: rgb(214, 214, 214, 0.1);
-      padding: 67px 50px 32px 50px;
+      padding: 50px 50px;
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -12,7 +12,7 @@
       .header {
          display: flex;
          align-items: center;
-         font-size: 32px;
+         font-size: 2rem;
          margin-bottom: 100px;
 
          img {
@@ -29,7 +29,7 @@
 
             &_title {
                text-align: center;
-               font-size: 32px;
+               font-size: 2rem;
             }
 
             &_block {
@@ -43,7 +43,7 @@
                background-color: rgb(255, 255, 255, 0.25);
                border-radius: 50px;
                border: 1px solid #4f4f4f;
-               font-size: 28px;
+               font-size: 1.75rem;
 
                img {
                   width: 90px;
@@ -70,9 +70,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 32px;
-
-          
+            font-size: 2rem;
          }
       }
    }
