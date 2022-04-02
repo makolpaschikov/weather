@@ -1,6 +1,9 @@
 :host {
    width: calc(100% * 0.35);
-
+   @media only screen and (max-width: 425px) {
+      width: 100%;
+   }
+   
    .weather-details-container {
       height: 100vh;
       background: rgb(214, 214, 214, 0.1);
@@ -14,6 +17,9 @@
       }
       @media only screen and (min-width: 1400px) and (max-width: 1999px) and (max-height: 835px) {
          padding: 25px;
+      }
+      @media only screen and (max-width: 425px) {
+         padding: 15px;
       }
 
       .header {

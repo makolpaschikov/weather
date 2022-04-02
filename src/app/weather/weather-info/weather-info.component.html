@@ -24,12 +24,18 @@
       <span>{{ time | async | time }}</span>
     </div>
     <div class="actual-data__weather">
-      <img src="assets/icons/actual-info/wind.svg" alt="Wind" />Wind
-      <span>{{ weatherData?.currentWeather?.wind }} mi/h</span><span>|</span>
-      <img src="assets/icons/actual-info/hum.svg" alt="Hum" />Hum
-      <span>{{ weatherData?.currentWeather?.hum }} %</span><span>|</span>
-      <img src="assets/icons/actual-info/rain.svg" alt="Rain" />Precipitation
-      <span>{{ weatherData?.currentWeather?.precipitation }} mm</span>
+      <div class="actual-data__weather_item">
+        <img src="assets/icons/actual-info/wind.svg" alt="Wind" class="wind"/>Wind
+        <span>{{ weatherData?.currentWeather?.wind }} mi/h</span><span class="weather-sep">|</span>
+      </div>
+      <div class="actual-data__weather_item">
+        <img src="assets/icons/actual-info/hum.svg" alt="Hum" />Hum
+        <span>{{ weatherData?.currentWeather?.hum }} %</span><span class="weather-sep">|</span>
+      </div>
+      <div class="actual-data__weather_item">
+        <img src="assets/icons/actual-info/rain.svg" alt="Rain" />Precipitation
+        <span>{{ weatherData?.currentWeather?.precipitation }} mm</span>
+      </div>
     </div>
   </div>
   <div class="next-days-data">

@@ -167,8 +167,12 @@ select {
       font-size: 28px;
    }
 }
-
 @media only screen and (min-width: 768px) and (max-width: 1399px) {
+   html {
+      font-size: 10px;
+   }
+}
+@media only screen and (max-width: 425px) {
    html {
       font-size: 10px;
    }
