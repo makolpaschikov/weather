@@ -5,15 +5,18 @@ import { SwitchComponent } from './switch/switch.component';
 import { WeatherInfoComponent } from './weather-info.component';
 
 
+
 @NgModule({
   declarations: [
     WeatherInfoComponent,
+
     SwitchComponent,
   ],
   exports: [WeatherInfoComponent],
   imports: [
     CommonModule,
     ApplicationPipesModule,
+
   ]
 })
 export class WeatherInfoModule { }

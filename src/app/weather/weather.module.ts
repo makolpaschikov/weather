@@ -15,6 +15,7 @@ import { WeatherDetailsComponent } from './weather-details/weather-details.compo
     CommonModule,
     WeatherInfoModule,
     WeatherDetailsModule,
+
   ],
   providers: [WeatherInfoComponent, WeatherDetailsComponent]
 })

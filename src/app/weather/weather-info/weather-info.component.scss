@@ -11,6 +11,7 @@
    .weater-info-container {
       height: 100vh;
       padding: 50px;
+
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -47,6 +48,7 @@
             @media only screen and (max-width: 425px) {
                height: 50px;
             }
+
          }
       }
 
@@ -56,6 +58,7 @@
 
          &__temperature {
             font-size: 10.25rem;
+
             letter-spacing: 0.025em;
             margin-bottom: 60px;
             font-weight: 100;
@@ -72,11 +75,13 @@
                margin-bottom: 15px;
             }
 
+
             sup {
                font-size: 70%;
                font-weight: 300;
 
                &.degree {
+
                   font-size: 40%;
                }
             }
@@ -90,11 +95,13 @@
 
             &:first-child {
                font-size: 2.5rem;
+
             }
 
             span {
                margin-left: 20px;
                font-size: 3.125rem;
+
             }
          }
 
@@ -130,6 +137,7 @@
                      display: none;
                   }
                }
+
             }
 
             img {
@@ -153,6 +161,7 @@
                      margin-left: 0px;
                   }
                }
+
             }
          }
       }
@@ -173,6 +182,7 @@
             height: max-content;
          }
 
+
          .days {
             width: auto;
             height: 100%;
@@ -183,6 +193,7 @@
                flex-wrap: wrap;
                justify-content: space-between;
             }
+
 
             &__day {
                width: 130px;
@@ -221,6 +232,7 @@
 
                &:not(:first-child) {
                   margin-left: 20px;
+
                }
 
                &_data {
@@ -246,6 +258,7 @@
                      @media only screen and (max-width: 425px) {
                         height: 18px;
                      }
+
                   }
                }
             }
@@ -257,3 +270,4 @@
       }
    }
 }
+

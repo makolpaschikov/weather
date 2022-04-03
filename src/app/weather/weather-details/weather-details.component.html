@@ -2,12 +2,14 @@
   <div class="header">
     <img src="assets/icons/details/place.svg" alt="Place" />
     {{ weatherData?.location?.city }}, {{ weatherData?.location?.country }}
+
   </div>
   <div class="suntime">
     <div class="suntime__item">
       <div class="suntime__item_title">Sunrise</div>
       <div class="suntime__item_block">
         <div>{{ weatherData?.currentWeather?.sunrise | time: true }}</div>
+
         <img src="assets/icons/details/sunrise.svg" alt="Sunrise" />
       </div>
     </div>
@@ -15,6 +17,7 @@
       <div class="suntime__item_title">Sunset</div>
       <div class="suntime__item_block">
         <div>{{ weatherData?.currentWeather?.sunset | time: true }}</div>
+
         <img src="assets/icons/details/sunset.svg" alt="Sunset" />
       </div>
     </div>
@@ -36,6 +39,7 @@
     <div class="data__item">
       <div>Wind speed</div>
       <div>{{ weatherData?.currentWeather?.wind }} mi/h</div>
+
     </div>
   </div>
 </div>

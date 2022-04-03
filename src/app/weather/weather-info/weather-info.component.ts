@@ -3,6 +3,7 @@ import { Observable, Subject, Subscriber, takeUntil } from 'rxjs';
 import { WeatherModel } from 'src/app/models/weather.model';
 import { WeatherService } from 'src/app/services/weather.service';
 
+
 @Component({
   selector: 'app-weather-info',
   templateUrl: './weather-info.component.html',
@@ -31,6 +32,7 @@ export class WeatherInfoComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this._destroy.next();
     this._destroy.complete();
+
   }
 
 }

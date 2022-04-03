@@ -5,6 +5,7 @@ import { ApplicationPipesModule } from 'src/app/shared/pipes.module';
 
 
 
+
 @NgModule({
   declarations: [
     WeatherDetailsComponent,
@@ -12,6 +13,7 @@ import { ApplicationPipesModule } from 'src/app/shared/pipes.module';
   imports: [
     CommonModule,
     ApplicationPipesModule,
+
   ],
   exports: [
     WeatherDetailsComponent

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from 'src/app/services/weather.service';
 
+
 @Component({
   selector: 'app-switch',
   templateUrl: './switch.component.html',
@@ -13,4 +14,5 @@ export class SwitchComponent {
   toggle(): void {   
     this.weatherService.toggleTemperatureType();
   }
+
 }
